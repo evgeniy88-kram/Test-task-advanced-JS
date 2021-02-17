@@ -446,8 +446,12 @@
         inputEmail = document.querySelector('#modal-window label:nth-child(2) input');
 
     checkBtn.addEventListener('click', function (){
-        modalWindow.style.cssText = 'display: block;'
-        darkBackground.style.cssText = 'display: block;'
+        if (sumResult > 0) {
+            modalWindow.style.cssText = 'display: block;'
+            darkBackground.style.cssText = 'display: block;'
+        } else {
+            alert ('Для начала выберите что-нибудь.')
+        }
     });
     btnSend.addEventListener('click', function () {
         if (inputName.value !== '' && inputName.value.trim().length > 0 && inputEmail.value.indexOf('@') !== -1) {
