@@ -211,12 +211,20 @@ h1, h2, h3 {
     background: white;
     border-radius: 20px;
 }
+#btn-close {
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 70px;
+    margin: 10px 0 0 210px;
+}
 #modal-window form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 50px auto;
+    margin: 35px auto;
     height: 200px;
 }
 form input {
@@ -239,3 +247,7 @@ form button {
     left: 0;
     z-index: 100;
 }
+button {
+    cursor: pointer;
+}
+

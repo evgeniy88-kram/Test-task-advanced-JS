@@ -443,12 +443,13 @@
         darkBackground = document.getElementById('dark-background'),
         btnSend = document.getElementById('btn-send'),
         inputName = document.querySelector('#modal-window label:nth-child(1) input'),
-        inputEmail = document.querySelector('#modal-window label:nth-child(2) input');
+        inputEmail = document.querySelector('#modal-window label:nth-child(2) input'),
+        btnClose = document.getElementById('btn-close');
 
     checkBtn.addEventListener('click', function (){
         if (sumResult > 0) {
-            modalWindow.style.cssText = 'display: block;'
-            darkBackground.style.cssText = 'display: block;'
+            modalWindow.style.cssText = 'display: block;';
+            darkBackground.style.cssText = 'display: block;';
         } else {
             alert ('Для начала выберите что-нибудь.')
         }
@@ -456,7 +457,7 @@
     btnSend.addEventListener('click', function () {
         if (inputName.value !== '' && inputName.value.trim().length > 0 && inputEmail.value.indexOf('@') !== -1) {
             modalWindow.style.cssText = 'display: none;';
-            darkBackground.style.cssText = 'display: none;'
+            darkBackground.style.cssText = 'display: none;';
             alert('Благодарим Вас за покупку!');
             sumOrder.innerText = `0 грн`;
             numbOrder.innerText = `0 шт`;
@@ -465,6 +466,10 @@
         } else {
             alert ('Форма заполнена некорректно! Заполните email адрес с символом @ и имя!')
         }
+    });
+    btnClose.addEventListener('click', function (){
+        modalWindow.style.cssText = 'display: none;';
+        darkBackground.style.cssText = 'display: none;';
     });
 
 })();
