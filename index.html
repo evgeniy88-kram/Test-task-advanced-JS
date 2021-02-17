@@ -15,7 +15,7 @@
                 <span class="top-cart-info__item">
                      Товаров в корзине - <span class="red-info" id="number"></span>,
                       на сумму <span class="red-info" id="sum"></span></span>
-                <button class="btn-check">Оформить заказ</button>
+                <button class="btn-check" id="btn-check">Оформить заказ</button>
             </div>
         </div><!-- /.top-cart-info -->
     </div><!-- /.top-cart -->
@@ -218,6 +218,14 @@
         </div>
     </footer>
 </div><!-- /.app-container -->
+<div id="modal-window">
+    <form action="/">
+        <Label><input type="text" placeholder="Ваше имя"></Label>
+        <Label><input type="email" placeholder="Ваш E-mail"></Label>
+        <button type="button" id="btn-send">Отправить</button>
+    </form>
+</div>
+<div id="dark-background"></div>
 <script src="js/task.js"></script>
 </body>
 </html>

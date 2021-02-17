@@ -43,7 +43,7 @@
         qty10 = document.getElementById('qty-10-ga'),
         qty11 = document.getElementById('qty-11-ga'),
         qty12 = document.getElementById('qty-12-ga'),
-        arrayOty = [qty1, qty2, qty3, qty4, qty5, qty6, qty7, qty8, qty9, qty10, qty11, qty12],
+        arrayQty = [qty1, qty2, qty3, qty4, qty5, qty6, qty7, qty8, qty9, qty10, qty11, qty12],
         sumCount = [],
         numbCount = [],
         arrayMain = [
@@ -73,11 +73,11 @@
     }
     for (let j = 0; j < 12; j++) {
         arrayBtnDishes[j].addEventListener('click', function (){
-            sumCount.push((arrayMain[j].price)*(+arrayOty[j].value));
+            sumCount.push((arrayMain[j].price)*(+arrayQty[j].value));
             CalcSum(sumCount);
             sumOrder.innerText = `${sumResult} грн`;
             sumCount = [];
-            numbCount.push(+arrayOty[j].value);
+            numbCount.push(+arrayQty[j].value);
             CalcNumb(numbCount);
             numbOrder.innerText = `${numbResult} шт`;
             numbCount = [];
@@ -436,7 +436,32 @@
                 }
             });
 
+    /*Check*/
 
+    let checkBtn = document.getElementById('btn-check'),
+        modalWindow = document.getElementById('modal-window'),
+        darkBackground = document.getElementById('dark-background'),
+        btnSend = document.getElementById('btn-send'),
+        inputName = document.querySelector('#modal-window label:nth-child(1) input'),
+        inputEmail = document.querySelector('#modal-window label:nth-child(2) input');
+
+    checkBtn.addEventListener('click', function (){
+        modalWindow.style.cssText = 'display: block;'
+        darkBackground.style.cssText = 'display: block;'
+    });
+    btnSend.addEventListener('click', function () {
+        if (inputName.value !== '' && inputName.value.trim().length > 0 && inputEmail.value.indexOf('@') !== -1) {
+            modalWindow.style.cssText = 'display: none;';
+            darkBackground.style.cssText = 'display: none;'
+            alert('Благодарим Вас за покупку!');
+            sumOrder.innerText = `0 грн`;
+            numbOrder.innerText = `0 шт`;
+            sumResult = 0;
+            numbResult = 0;
+        } else {
+            alert ('Форма заполнена некорректно!')
+        }
+    });
 
 
 
